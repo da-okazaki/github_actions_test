@@ -23,5 +23,5 @@ jobs:
       run: |
         echo "env.APP_ENV:" ${{ env.APP_ENV }}
         echo "job.environment:" ${{ job.environment }} 
-        echo "vars.VARIABLES_TEST:" ${${ vars.VARIABLES_TEST }}
+        echo "vars.VARIABLES_TEST:" ${{ vars.VARIABLES_TEST }}
         
