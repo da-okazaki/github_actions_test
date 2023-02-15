@@ -17,11 +17,11 @@ jobs:
     environment: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
     #environment: 
     #  name: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
-    # environment: ${{ env.APP_ENV }}
 
     steps:
     - name: output test
       run: |
         echo "env.APP_ENV:" ${{ env.APP_ENV }}
         echo "job.environment:" ${{ jobs.deploy.environment }} 
+        echo "secrets.SECRET_TEST:" secrets.SECRET_TEST
         
