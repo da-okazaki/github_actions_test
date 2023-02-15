@@ -12,11 +12,12 @@ env:
 
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy DEV
     runs-on: ubuntu-latest
-    environment: ${{ env.APP_ENV }}
+    environment: "${{ github.ref_name }} === 'main' ? 'prod' : 'develop'"
 
     steps:
     - name: output test
       run: |
         echo ${{ env.APP_ENV }}
+        echo ${{ jobs.deploy.environment }}
