@@ -8,13 +8,13 @@ permissions:
   contents: read
 
 env:
-  APP_ENV: ${{ (github.ref_name === 'main' && 'prod') || 'develop' }}
+  APP_ENV: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
 
 jobs:
   deploy:
     name: Deploy DEV
     runs-on: ubuntu-latest
-    environment: ${{ (github.ref_name === 'main' && 'prod') || 'develop' }}
+    environment: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
 
     steps:
     - name: output test
