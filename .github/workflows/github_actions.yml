@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 env:
-  APP_ENV: "${{ github.ref_name }} === 'main' ? 'prod' : 'develop'"
+  APP_ENV: ${{ github.ref_name === 'main' ? 'prod':'develop'}}
 
 jobs:
   deploy:
