@@ -20,4 +20,3 @@ jobs:
     - name: output test
       run: |
         echo ${{ env.APP_ENV }}
-        # echo ${{ jobs.deploy.environment }}
