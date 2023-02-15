@@ -22,6 +22,6 @@ jobs:
     - name: output test
       run: |
         echo "env.APP_ENV:" ${{ env.APP_ENV }}
-        echo "job.environment:" ${{ jobs.deploy.environment }} 
+        echo "job.environment:" ${{ job.environment }} 
         echo "secrets.SECRET_TEST:" secrets.SECRET_TEST
         
