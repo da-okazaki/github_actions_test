@@ -14,8 +14,7 @@ jobs:
   deploy:
     name: Deploy DEV
     runs-on: ubuntu-latest
-    environment: 
-      name: prod
+    environment: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
     #environment: 
     #  name: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
     # environment: ${{ env.APP_ENV }}
@@ -24,5 +23,5 @@ jobs:
     - name: output test
       run: |
         echo "env.APP_ENV:" ${{ env.APP_ENV }}
-        echo "job.environment.name:" ${{ job.environment.name }} 
+        echo "job.environment.name:" ${{ job.environment }} 
         
