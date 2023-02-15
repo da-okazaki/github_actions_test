@@ -1,0 +1,22 @@
+name: Github Actions Test
+
+on:
+  push:
+    branches: [ "develop", "main" ]
+
+permissions:
+  contents: read
+
+env:
+  APP_ENV: "${{ github.ref_name }} === 'main' ? 'prod' : 'develop'"
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: ${{ env.APP_ENV }}
+
+    steps:
+    - name: output test
+      run: |
+        echo ${{ env.APP_ENV }}
