@@ -14,10 +14,12 @@ jobs:
   deploy:
     name: Deploy DEV
     runs-on: ubuntu-latest
-    # environment: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
-    environment: ${{ env.APP_ENV }}
+    environment: 
+      name: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
+    # environment: ${{ env.APP_ENV }}
 
     steps:
     - name: output test
       run: |
         echo ${{ env.APP_ENV }}
+        echo ${{ environment.name }} 
