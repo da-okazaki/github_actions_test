@@ -21,6 +21,6 @@ jobs:
     steps:
     - name: output test
       run: |
-        echo ${{ env.APP_ENV }}
-        echo ${{ job.environment.name }} 
+        echo "env.APP_ENV:" ${{ env.APP_ENV }}
+        echo "job.environment.name:" ${{ job.environment.name }} 
         
