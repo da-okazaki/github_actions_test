@@ -15,7 +15,9 @@ jobs:
     name: Deploy DEV
     runs-on: ubuntu-latest
     environment: 
-      name: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
+      name: prod
+    #environment: 
+    #  name: ${{ (github.ref_name == 'main' && 'prod') || 'develop' }}
     # environment: ${{ env.APP_ENV }}
 
     steps:
